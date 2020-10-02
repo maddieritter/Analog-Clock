@@ -1,53 +1,72 @@
+@font-face {
+    font-family: 'Las Enter Personal Use Only';
+    src: url('LasEnterPersonalUseOnly.woff2') format('woff2'),
+        url('LasEnterPersonalUseOnly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .main {
-    display: flex;
-    padding: 2em;
-    height: 90vh;
+    display: flexbox;
+    padding: 1em;
+    height: auto;
+    width: auto;
     justify-content: center;
-    align-items: middle;
+    align-items: center;
+    background-color: #010e22;
 }
 
 .clockbox,
 #clock {
     width: 100%;
+    filter: url(#f2);
+    margin: auto;
 }
 
 .circle {
     fill: none;
-    stroke: #000;
-    stroke-width: 9;
+    stroke:#F73C58;
+    stroke-width: 6;
     stroke-miterlimit: 10;
 }
 
 .mid-circle {
-    fill: #000;
+    fill: url(#grad1);
+    stroke: #E92EFB;
+    stroke-width: 2;
 }
 
 .hour-marks {
     fill: none;
-    stroke: #000;
-    stroke-width: 9;
+    stroke:#E92EFB;
+    stroke-width: 8;
     stroke-miterlimit: 10;
+    stroke-linecap: round;
 }
 
 .hour-arm {
     fill: none;
-    stroke: #000;
-    stroke-width: 17;
+    stroke: paleturquoise;
+    stroke-width: 16;
     stroke-miterlimit: 10;
+    stroke-linecap: round;
 }
 
 .minute-arm {
     fill: none;
-    stroke: #000;
+    stroke: palegreen;
     stroke-width: 11;
     stroke-miterlimit: 10;
+    stroke-linecap: round;
 }
 
 .second-arm {
     fill: none;
-    stroke: #000;
+    stroke: #E92EFB;
     stroke-width: 4;
     stroke-miterlimit: 10;
+    stroke-linecap: round;
 }
 
 .sizing-box {
@@ -59,4 +78,14 @@
 #second {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
+}
+
+.text {
+    font-family: 'Las Enter Personal Use Only', Fallback, sans-serif;
+    color: paleturquoise;
+    filter: url(#f2);
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
 }

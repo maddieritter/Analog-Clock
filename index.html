@@ -11,12 +11,14 @@
 
 <body>
 <main class="main">
+    <div class="text" id="text">
+        <h1>BeerO'clock</h1>    
+    </div>
     <div class="clockbox">
         <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
             <g id="face">
                 <circle class="circle" cx="300" cy="300" r="253.9"/>
                 <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"/>
-                <circle class="mid-circle" cx="300" cy="300" r="16.2"/>
             </g>
             <g id="hour">
                 <path class="hour-arm" d="M300.5 298V142"/>
@@ -30,6 +32,24 @@
                 <path class="second-arm" d="M300.5 350V55"/>
                 <circle class="sizing-box" cx="300" cy="300" r="253.9"/>
             </g>
+            <g id="face">
+                <circle class="mid-circle" cx="300" cy="300" r="16.2"/>
+            </g>
+            <!-- I looked up SVGs on w3 to figure out the glow -->
+              <defs>
+                <filter id="f2" width="200%" height="200%">
+                  <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+                  <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+              </defs>
+              <defs>
+                <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                  <stop offset="50%" style="stop-color:#010e22;
+                  stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#E92EFB;stop-opacity:1" />
+                </radialGradient>
+              </defs>
         </svg>
     </div>
 </main>
